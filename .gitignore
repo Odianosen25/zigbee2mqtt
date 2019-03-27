@@ -60,3 +60,7 @@ typings/
 # data
 data/database.db
 data/config.json
+data/log*.txt
+data/state.json
+data/log
+data-backup/

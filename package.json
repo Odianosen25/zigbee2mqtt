@@ -1,11 +1,14 @@
 {
   "name": "zigbee2mqtt",
-  "version": "0.1.0",
+  "version": "1.2.1",
   "description": "Zigbee to MQTT bridge using zigbee-shepherd",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Koenkk/zigbee2mqtt.git"
+  },
+  "engines": {
+    "node": "10"
   },
   "keywords": [
     "xiaomi",
@@ -17,24 +20,44 @@
     "cc2531"
   ],
   "scripts": {
+    "coverage": "nyc --all report --reporter=text mocha --recursive --timeout=3000",
+    "docgen": "node docgen/docgen.js",
+    "eslint": "node_modules/.bin/eslint .",
     "start": "node index.js",
-    "docgen": "node support/docgen.js"
+    "test": "mocha --recursive"
   },
   "author": "Koen Kanters",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Koenkk/zigbee2mqtt/issues"
   },
-  "homepage": "https://github.com/Koenkk/zigbee2mqtt/wiki",
+  "homepage": "https://koenkk.github.io/zigbee2mqtt",
   "dependencies": {
+    "git-last-commit": "*",
+    "js-yaml": "*",
+    "mkdir-recursive": "*",
+    "moment": "*",
     "mqtt": "*",
-    "winston": "*",
-    "zigbee-shepherd": "*",
-    "zcl-packet": "git+https://github.com/koenkk/zcl-packet.git",
-    "json2yaml": "*",
-    "yawn-yaml": "*"
+    "object-assign-deep": "*",
+    "queue": "*",
+    "rimraf": "*",
+    "semver": "*",
+    "winston": "2.4.2",
+    "zcl-id": "git+https://github.com/Koenkk/zcl-id.git#77ba3058c6c4b09a9958761ae5e3046765c12872",
+    "ziee": "*",
+    "zigbee-shepherd": "git+https://github.com/Koenkk/zigbee-shepherd.git#f1f3701c20a125c939504e46c82ac4dda692ff41",
+    "zigbee-shepherd-converters": "7.2.7",
+    "zive": "*"
   },
   "devDependencies": {
-    "eslint": "*"
+    "chai": "*",
+    "chai-spies": "*",
+    "eslint": "*",
+    "eslint-config-google": "*",
+    "eslint-plugin-mocha": "*",
+    "mocha": "*",
+    "nyc": "*",
+    "sinon": "*",
+    "tmp": "*"
   }
 }

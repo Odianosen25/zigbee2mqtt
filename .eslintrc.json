@@ -1,24 +1,21 @@
 {
     "env": {
-        "browser": true,
-        "commonjs": true,
+        "mocha": true,
         "es6": true,
         "node": true
     },
+    "extends": ["eslint:recommended", "google"],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true,
-            "experimentalObjectRestSpread": true
-        },
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "rules": {
-        "no-const-assign": "warn",
-        "no-this-before-super": "warn",
-        "no-undef": "warn",
-        "no-unreachable": "warn",
-        "no-unused-vars": "warn",
-        "constructor-super": "warn",
-        "valid-typeof": "warn"
-    }
+        "require-jsdoc": "off",
+        "indent": ["error", 4],
+        "max-len": ["error", { "code": 120 }],
+        "mocha/no-exclusive-tests": "error"
+    },
+    "plugins": [
+        "mocha"
+    ]
 }
